@@ -4,46 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>可视化数学</title>
+    <link rel="" href="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+                minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <script>
+        function resetHtmlFontSize(){
+            document.documentElement.style.fontSize = window.innerWidth/800 + 'px';
+        }
+        resetHtmlFontSize();
+        window.onresize = resetHtmlFontSize;
+    </script>
 
     <style>
-        .title_bar{
-            width: 100%;
-            height: 100px;
-            position: absolute;
-            background-color: rgb(32, 115, 147);
-            top: -10px;
-        }
-
         .title{
-            width: 950px;
-            height: 325px;
+            width: 270rem;
+            height: 98rem;
             position: absolute;
-            right: 10px;
-            top: 80px;
+            left: 260rem;
+            top: 12rem;
         }
         .logo{
             display: inline-block;
             position: absolute;
-            width: 240px;
-            padding-top: 45px;
+            width: 72rem;
+            padding-top: 14rem;
         }
         .word{
             display: inline-block;
             position: absolute;
-            padding-left: 150px;
-            width: 750px;
+            padding-left: 45rem;
+            width: 225rem;
         }
         .english_word{
             position: absolute;
-            padding-left: 225px;
-            padding-top: 270px;
-            width: 750px;
+            padding-left: 70rem;
+            padding-top: 80rem;
+            width: 225rem;
+        }
+
+        .introduction{
+            display: flex;
+            justify-content: space-between;
+            width: 700rem;
+            height: 240rem;
+            position: absolute;
+            right: 55rem;
+            top: 130rem;
+        }
+        .GIf{
+            margin-top: 10rem;
+            width: 288rem;
+            height: 216rem;
+        }
+        .vertical_container{
+            padding-top: 15rem;
+            width: 300rem;
+            display: flex;
+            flex-direction: column;
         }
 
         .backgroud{
-            width: 100%;
+            width: 800rem;
             position: fixed;
-            right: 0;
+            left: 0;
             top: 0;
         }
         
@@ -51,14 +76,38 @@
 </head>
 <body>
     <div>
-        <h1 class="title_bar"></h1>
-        <img src="/picture/背景.jpg" width="100%">
+        <img class="backgroud" src="/picture/背景.jpg">
         <div class="title">
             <img class="logo" src="/picture/logo.png">
-            <h1 class="word" style="font: bolder 150px KaiTi; color: antiquewhite;" >可视化数学</h1>
-            <u class="english_word" style="font-size: 25px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">V_i_s_u_a_l_i_z_a_t_i_o_n___M_a_t_h_e_m_a_t_i_c_s</u>
+            <h1 class="word" style="font: bolder 45rem KaiTi; color: rgb(245, 211, 148);" >可视化数学</h1>
+            <u class="english_word" style="color: rgb(68, 204, 204); font-size: 7rem; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">V_i_s_u_a_l_i_z_a_t_i_o_n___M_a_t_h_e_m_a_t_i_c_s</u>
+        </div>
+        <div class="introduction">
+            <div class="vertical_container">
+                <p style="color: rgb(163, 163, 163);font-size: 12rem;font-family: SonTi; display: inline-block;white-space: normal;word-break: break-all;overflow: hidden;">
+                    这是一个致力于将数学知识可视化的网站，该网站以视频的形式将晦涩的数学知识生动的表达，并配有对视频的讲解注释，
+                    以便用户能够更好理解视频所表达的内容，我们希望通过该网站让更多人更加深刻地了解数学，感受数学之美。
+                </p>
+                <img id="button_pic" src="/picture/开始探索按钮.png" style="position: absolute; margin-top: 107rem; margin-left: 70rem;width: 120rem; height: 40rem;">
+                <button id="button" style="background: none;border: none; margin-top: 10rem; margin-left: 85rem;width: 90rem; height: 30rem; color: darkgray; font: bolder 20rem 'KaiTi';">开始探索</button>
+                <script>
+                    let button_pic = document.getElementById('button_pic');
+                    let button = document.getElementById('button');
+                    button_pic.addEventListener('mousedown',function(){
+                        window.location = "/main_interface.html";
+                    });
+                    button_pic.addEventListener('mouseover',function(){
+                        button.style.color = "coral";
+                    })
+                    button_pic.addEventListener('mouseout',function(){
+                        button.style.color = "darkgray";
+                    })
+                </script>
+            </div>
+            <img class="GIf" src="/GIF/modle.gif">
         </div>
     </div>
+
 </body>
 </html>
 
