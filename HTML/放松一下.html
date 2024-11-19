@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>放松一下</title>
+    <link rel="shortcut icon" href="/picture/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/CSS/topBar.css">
+</head>
+
+<script>
+    function resetHtmlFontSize(){
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/800 + 'px';
+    }
+    resetHtmlFontSize();
+    window.onresize = resetHtmlFontSize;
+</script>
+
+<body>
+     <!-- 顶栏 -->
+     <div id="topBarBox">
+        <div id="topBar">
+            <div id="topBarButton">
+                <h1 class="topBarHomepageFont">首页</h1>
+                <h2 class="topBarFont">更新公告</h2>
+                <h2 class="topBarFont">关于</h2>
+                <h2 class="topBarFont">联系作者</h2>
+            </div>
+            
+            <div class="topSearchBar" >
+                <input type="text" id="topBarText" name="topBarTextInput" placeholder="搜索：" class="topSearchBarInput">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/JS/topBarDown.js"></script>
+<script src="/JS/topBarButton.js"></script>
+</html>
