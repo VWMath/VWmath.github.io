@@ -1,0 +1,34 @@
+.sideBar{
+    margin: -5rem;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100rem;
+    height: 101vh;
+}
+
+.sideBar div{
+    width: 100rem;
+    height: 30rem;
+    background-color: white;
+}
+
+@keyframes showLetfSideBar{
+    0%{margin-left: -105rem;}
+    100%{margin-left: -5rem;}
+}
+
+@keyframes hideLeftSideBar{
+    0%{margin-left: -5rem;}
+    100%{margin-left: -105rem;}
+}
+
+@keyframes showToolSideBar{
+    0%{right: -105rem;}
+    100%{right: -5rem;}
+}
+
+@keyframes hideToolSideBar{
+    0%{right: -5rem;}
+    100%{right: -105rem;}
+}

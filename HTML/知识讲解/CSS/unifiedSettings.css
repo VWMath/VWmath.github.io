@@ -1,0 +1,159 @@
+#title{
+    text-align: center;
+    width: 750rem;
+    font-size: 23rem;
+    padding-bottom: 18rem;
+    margin-bottom: -5rem;
+    border-bottom: 0.8rem solid;
+    border-image: linear-gradient(to right, whitesmoke 15%, darkgray 50%, whitesmoke 85%)1;
+}
+
+h1 div{
+    display: inline-block;
+    width: 15rem;
+}
+
+h2{
+    margin: 2rem;
+}
+
+#homepage{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 750rem;
+    background-color: whitesmoke;
+}
+
+#homepage > div{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 650rem;
+}
+
+#homepage > div > div{
+    align-self: center;
+    width: 550rem;
+    background-color:rgba(234, 234, 234, 0.589);
+}
+
+#definitionBox{
+    display: flex;
+    flex-direction: column;
+}
+
+#definition{
+    margin: -20rem;
+    align-self: center;
+}
+
+#definition p{
+    font-size: 15rem;
+    color: rgb(57, 57, 57);
+}
+
+#teachBox{
+    display: flex;
+    flex-direction: column;
+}
+
+#teachBox>img{
+    align-self: center;
+}
+
+#introduceBox{
+    background-color: rgba(234, 234, 234, 0.589);
+}
+
+#interactiveBox{
+    margin-top: 10rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.formula{
+    align-self: center;
+    height: 15rem;
+}
+
+.marginFormular{
+    display: flex;
+    align-self: center;
+    align-items: center;
+}
+
+.toolElements{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toolElements>div{
+    display: flex;
+    align-items: center;
+}
+
+.formOrImgTitle{
+    align-self: center;
+}
+
+.theoremBox{
+    display: flex;
+}
+
+.theoremBox>math{
+    font-size: 15rem;
+    font-weight: bold;
+    margin: 0;
+    justify-self: center;
+    align-self: center;
+    color: rgb(49, 49, 49);;
+}
+
+.proofBox{
+    display: flex;
+    justify-content: space-around;
+    width: calc(90%);
+    padding-left: 15rem;
+    margin-bottom: 15rem;
+}
+
+.proofBox h3{
+    width: 80rem;
+    margin: 0;
+}
+
+.proofBox img{
+    align-self: center;
+}
+
+.proofBox>div{
+    display: flex;
+    flex-direction: column;
+    width: 400rem;
+    margin-right: 30rem;
+    background-color: rgb(226, 226, 226);
+}
+
+.proofBox>div math{
+    font-size: 12rem;
+    margin: 0;
+    color: rgb(49, 49, 49);
+    justify-self: center;
+    align-self: center;
+}
+
+.proofBox>div>div{
+    display: flex;
+}
+
+.proofBox p{
+    font-size: 9rem;
+    margin: 2rem;
+    color: rgb(49, 49, 49);
+}
+
+.proofBox>div>div>math{
+    font-size: 10rem;
+}
