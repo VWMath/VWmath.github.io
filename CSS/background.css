@@ -1,0 +1,11 @@
+.backgroundBox{
+    width: 1600rem;
+    margin-top: -230rem;
+    margin-left: -405rem;
+    position: fixed;
+    z-index: -2;
+}
+
+#backgroundImg{
+    width:1200rem;
+}

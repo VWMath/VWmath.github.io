@@ -1,0 +1,9 @@
+@font-face {
+    font-family: GreekAlphabet;
+    src: url('/fontFamily/GFSBodoniClassic/GFSBodoniClassic.otf');
+}
+
+@font-face {
+    font-family: handwritten fonts;
+    src: url('/fontFamily/Pinyon_Script/PinyonScript-Regular.ttf');
+}

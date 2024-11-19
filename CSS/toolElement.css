@@ -1,0 +1,38 @@
+.slideBarBox{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    height: 50rem;
+    width: 50rem;
+    background-color: transparent;
+}
+
+.rod{
+    display: flex;
+    width: calc(80%);
+    height: 1rem;
+    background-color: darkgray;
+}
+
+.slider{
+    position: absolute;
+    margin-left: 0;
+    margin-top: -5rem;
+    height: 10rem;
+    width: 5rem;
+    border-radius: 3rem;
+    background-color: white;
+    box-shadow: 0 0 5rem darkgray;
+}
+
+.clickBotton{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 5rem darkgray;
+}
+
+.clickBotton:active{
+    transform: scale(0.9);
+}

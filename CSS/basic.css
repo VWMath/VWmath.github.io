@@ -1,0 +1,61 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+div{
+    font-size: 25rem;
+}
+
+h1{
+    user-select: none;
+    pointer-events: none;
+    font-size: 20rem;
+}
+
+h2{
+    user-select: none;
+    pointer-events: none;
+    font-size: 15rem;
+}
+
+h3{
+    user-select: none;
+    pointer-events: none;
+    font-size: 12rem;
+}
+
+p{
+    user-select: none;
+    pointer-events: none;
+    color: darkgray;
+    font-size: 8rem;
+}
+
+img{
+    user-select: none;
+    pointer-events: none;
+}
+
+pre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+}
+
+label{
+    font-size: 10rem;
+}
+
+math{
+    user-select: none;
+}
+
+input{
+    outline: none;
+}
+
+input::selection {
+    background-color: rgb(170, 244, 255);
+}

@@ -1,0 +1,65 @@
+#topBarBox{
+    z-index: 1;
+    position: fixed;
+    margin-top: -30rem;
+    width: 800rem;
+    height: 50rem;
+}
+
+#topBar{
+    margin-left: -5rem;
+    position: fixed;
+    width: 800rem;
+    height: 25rem;
+}
+
+#topBarButton{
+    display: flex;
+    float: left;
+    justify-content: space-around;
+    margin-top: 2rem;
+    margin-left: 5rem;
+    width: 200rem;
+}
+
+#topBarButton h1{
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-bottom: 1rem;
+    margin-top: 3rem;
+    font-size: 12rem;
+    font-weight: 1rem;
+    border-radius: 10rem;
+    user-select: none;
+    pointer-events: all;
+}
+
+#topBarButton h2{
+    height: 11rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-top: 8rem;
+    font-size: 8rem;
+    font-weight: 1rem;
+    border-radius: 8rem;
+    user-select: none;
+    pointer-events: all;
+}
+
+#topSearchBar{
+    margin-top: 6rem;
+    float: right;
+    width: 100rem;
+    height: 12rem;
+}
+
+.topSearchBarInput{
+    font-size: 8rem;
+    float: left;
+    width: 80rem;
+    height: 12rem;
+    border-radius: 5rem;
+    background-color: transparent;
+    border:0.8rem solid black;
+    outline: none;
+}

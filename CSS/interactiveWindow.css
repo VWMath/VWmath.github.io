@@ -1,0 +1,190 @@
+/* 坐标系交互 */
+canvas{
+    align-self: center;
+    background-color: black;
+}
+
+.interactiveBox{
+    display: flex;
+    justify-content: center;
+}
+
+.controlWindow{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 50rem;
+    padding-left: 12rem;
+    border-left: 0.8rem solid gray;
+    width: calc(35%);
+    user-select: none;
+}
+
+.controlWindow img{
+    max-width: 80%;
+    align-self: center;
+}
+
+.slider{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 28rem;
+    margin-left: 10rem;
+}
+
+.slider > div{
+    width: 200rem;
+    height: 1rem;
+    background-color: darkgray;
+}
+
+.slider > div > div{
+    margin-top: -9.5rem;
+    width: 10rem;
+    height: 20rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 2rem rgb(124, 124, 124);
+    border-radius: 3rem;
+}
+
+.rgbArea{
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    width: 120rem;
+    height: 170rem;
+    pointer-events: none;
+}
+
+.rgbButton{
+    border-radius: 1.5rem;
+    width: 10rem;
+    height: 10rem;
+    pointer-events: all;
+    box-shadow: 0 0 3rem darkgray;
+}
+
+.rgbBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10rem;
+    width: 100rem;
+    height: 150rem;
+    background-color: rgb(103, 103, 103);
+    border-radius: 3rem;
+    animation: show 0.5s forwards;
+    box-shadow: 0 0 5rem rgb(44, 44, 44);
+}
+
+.rgbCanvasBox{
+    display: flex;
+    width: 80rem;
+    margin: 5rem;
+}
+
+
+.swatchesDIV{
+    width: 80rem;
+    height: 80rem;
+}
+
+.swatchesBAR{
+    width: 80rem;
+    height: 12rem;
+}
+
+.rgbValueBox{
+    width: 80rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.rgbValueBox > div{
+    display: flex;
+    justify-content: center;
+    font-size: 7rem;
+    font-weight: 3rem;
+    color: white;
+}
+
+.rgbValueBox > div > p{
+    width: 70rem;
+    text-align: center;
+    margin: 0rem;
+    font-size: 6rem;
+    color: white;
+    border-bottom: 0.2rem solid rgb(124, 124, 124);
+}
+
+.targetCircle{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    margin-top: -2.5rem;
+    margin-left: -2.5rem;
+    background-color: transparent;
+    border: 0.5rem solid azure;
+    border-radius: 50%;
+}
+
+.strip{
+    align-self: center;
+    position: absolute;
+    background-color: rgb(188, 188, 188);
+    width: 0.7rem;
+    height: 15rem;
+}
+
+
+/* 数学表达式交互 */
+.interactiveFormular{
+    align-self: center;
+    font-size: calc(25%);
+    max-width: calc(90%);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.matrix{
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    margin: 2rem;
+    font-size: 1rem;
+    border: 1.2rem solid rgb(0, 0, 0);
+    border-top: hidden;
+    border-bottom: hidden;
+    border-radius: 7rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.column {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.column > input{
+    font-size: 12rem;
+    text-align: center;;
+    border: hidden;
+    width: 10rem;
+    height: 10rem;
+    margin: 2rem;
+    background-color: transparent;
+    outline: none;
+}
+
+@keyframes show{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
