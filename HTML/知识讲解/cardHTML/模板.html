@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板</title>
+    <link rel="shortcut icon" href="/picture/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../CSS/unifiedSettings.css">
+    <link rel="stylesheet" href="/CSS/basic.css">
+    <link rel="stylesheet" href="/CSS/topBar.css">
+</head>
+
+<script>
+    function resetHtmlFontSize(){
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/800 + 'px';
+    }
+    resetHtmlFontSize();
+    window.onresize = resetHtmlFontSize;
+</script>
+
+<style>
+    p{
+        font-size: 11rem;
+        color: rgb(143, 143, 143);
+    }
+</style>
+
+<body style="background-color: rgb(235, 232, 226);">
+    <!-- 顶栏 -->
+    <div id="topBarBox">
+        <div id="topBar" style="background-color: rgb(216, 216, 216);">
+            <div id="topBarButton">
+                <h1>首页</h1>
+                <h2>更新公告</h2>
+                <h2>关于</h2>
+                <h2>联系作者</h2>
+            </div>
+            
+            <div id="topSearchBar" >
+                <input type="text" id="topBarText" name="topBarTextInput" placeholder="搜索：" class="topSearchBarInput">
+            </div>
+        </div>
+    </div>
+
+    <!-- 主页 -->
+    <div id="homepage">
+        <h1 id="title">模板</h1>
+        <div>
+            <h1>·背<div></div>景：</h1>
+            <div style="background-color:rgba(234, 234, 234, 0.589)">
+                <p style=" text-indent: 2em;"></p>
+            </div>
+        </div>
+        
+        <div>
+            <h1>·定<div></div>义：</h1>
+            <div></div>
+        </div>
+        
+        <div>
+            <h1>·讲<div></div>解：</h1>
+            <div id="teachBox">
+                <div id="introduceBox"></div>
+                <div id="interactiveBox">
+                    <canvas class="interactiveWindow"></canvas>
+                    <div id="controlWindow"></div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div>
+            <h1>·应<div></div>用：</h1>
+            <div></div>
+        </div>
+
+    </div>
+
+</body>
+
+<script src="/JS/topBarDown.js"></script>
+<script src="/JS/topBarButton.js"></script>
+
+</html>

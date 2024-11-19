@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特征值与特征向量</title>
+    <link rel="shortcut icon" href="/picture/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../CSS/unifiedSettings.css">
+    <link rel="stylesheet" href="/CSS/basic.css">
+    <link rel="stylesheet" href="/CSS/topBar.css">
+    <link rel="stylesheet" href="/CSS/interactiveWindow.css">
+    <link rel="stylesheet" href="/CSS/fontFamily.css">
+    <link rel="stylesheet" href="../CSS/sideBar.css">
+    <link rel="stylesheet" href="../../../CSS/toolElement.css">
+
+</head>
+
+<script>
+    function resetHtmlFontSize(){
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/800 + 'px';
+    }
+    resetHtmlFontSize();
+    window.onresize = resetHtmlFontSize;
+</script>
+
+<style>
+    .sideBar{
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 10rem 5rem darkgray;
+    }
+
+    p{
+        display: inline-block;
+        font-size: 11rem;
+        color: rgb(197, 197, 197);
+    }
+
+    .marginFormular>div{
+        max-width: 50rem;
+    }
+
+    .marginFormular>h3{
+        font-size: 10rem;
+        font-weight: 500;
+        margin: 0rem;
+        align-self: center;
+        max-width: 40rem;
+        overflow-x: auto;
+    }
+
+    .controlWindow>math{
+        font-size: 15rem;
+        margin:-10rem;
+    }
+
+</style>
+
+<body style="background-color: rgb(235, 232, 226);">
+    <!-- 顶栏 -->
+    <div id="topBarBox">
+        <div id="topBar" style="background-color: rgb(216, 216, 216);">
+            <div id="topBarButton">
+                <h1>首页</h1>
+                <h2>更新公告</h2>
+                <h2>关于</h2>
+                <h2>联系作者</h2>
+            </div>
+            
+            <div id="topSearchBar" >
+                <input type="text" id="topBarText" name="topBarTextInput" placeholder="搜索：" class="topSearchBarInput">
+            </div>
+        </div>
+    </div>
+
+    <!-- 侧边栏 -->
+    <div class="sideBar" style="margin-left: -105rem;"></div>
+
+    <div class="sideBar" style="right: -105rem;"></div>
+
+
+    <!-- 主页 -->
+    <div id="homepage">
+        <h1 id="title">特征值与特征向量</h1>
+        <div>
+            <h1>·背<div></div>景：</h1>
+            <div>
+                <p style="text-indent: 2em;">特征值与特征向量的概念最早由英国数学家凯莱（Arthur Cayley）于1858年提出。凯莱首次引入了“矩阵”这一概念，
+                    并定义了特征值和特征向量，这些概念后来成为了现代线性代数的基础部分。特征值和特征向量为理解和描述线性变换提供了一种强有力的工具。
+                    它们揭示了矩阵或线性变换的本质属性，在物理学、工程学、计算机科学等众多领域中都有着广泛的应用。</p>
+            </div>
+        </div>
+        
+        <div>
+            <h1>·定<div></div>义：</h1>
+            <div id="definitionBox">
+                <div>
+                    <p style="font-family: handwritten fonts;">设A</p>
+                    <p>是数域P上的线性空间V的一个线性变换，若对数域P中的一个数存在一个非零向量</p>
+                    <p style="font-family: GreekAlphabet;">ξ</p><p>使得</p>
+                </div>
+
+                <div id="definition">
+                    <p style="font-family: handwritten fonts; margin-right: 2rem;">A</p>
+                    <p style="font-family: GreekAlphabet;">ξ=λξ</p>
+                </div>
+
+                <div>
+                    <p>那么</p><p style="font-family: GreekAlphabet;">λ</p><p>称为线性变换</p>
+                    <p style="font-family: handwritten fonts;">A</p><p>的一个特征值</p>
+                    <p style="font-family: GreekAlphabet;">ξ</p><p>称为</p><p style="font-family: handwritten fonts;">A</p>
+                    <p>的属于特征值</p><p style="font-family: GreekAlphabet;">λ</p><p>的一个特征向量</p>
+                </div>
+                    
+                <div>
+                    <p>在有限维线性空间中，选定一组基后，线性变换就能够通过矩阵表示，即上式可写为</p>
+                </div>
+                
+                <div id="definition">
+                    <p style="font-family: GreekAlphabet;">Aξ=λξ</p>
+                </div>
+
+                <div>
+                    <p style="font-family: GreekAlphabet;">其中A为线性变换在选定一组基后对应的矩阵，满足条件的λ，ξ也称为矩阵A的特征值和特征向量</p>
+                </div>
+
+            </div>
+        </div>
+        
+        <div>
+            <h1>·讲<div></div>解：</h1>
+            <div id="teachBox">
+                <h2>特征值和特征向量反应了矩阵的什么特征</h2>
+                <p style="text-indent: 2em;">我们知道，用一个矩阵乘一个向量，得到的结果仍是向量，也就是说，矩阵将一个向量以某种映射方式映射为另一个向量。你可以将矩阵想象为一个以向量为自变量函数，并且该函数的值也是一个向量（读者可以顺着这个思路思考为什么一般的矩阵不满足乘法交换律）。
+                下面以二维矩阵为例，读者可以尝试更改向量与矩阵的值来感受这种映射（变换）</p>
+                
+                <div class="interactiveBox">
+                    <canvas width="330rem" height="250rem"></canvas>
+                    <div class="controlWindow">
+                        <img src="./picture/特征值与特征向量/矩阵变换示意.png">
+
+                        <div class="marginFormular">
+                            <div style="max-width: 80rem;"></div>
+                            <div></div>
+                            <h3>=</h3>
+                            <div></div>
+                        </div>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>A</mi><mi>α</mi><mo>=</mo><msup><mi>α</mi><mo>′</mo></msup></math>                        
+
+                        <div style="display: flex;align-items: center;align-self: center;">
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>α</mi></math>
+                            <div class="toolElements"></div>
+                        </div>
+                    </div>
+                </div>
+                 
+                <p style="text-indent: 2em;margin-bottom: 0;">播放动画，不难理解矩阵实际上是对向量进行了某个方向上的“拉伸”。而特征值和特征向量反应的正是矩阵对向量拉伸的大小和方向这一特征。</p>
+                <h2 style="margin-top: 8rem;">怎么用特征值和特征向量代替矩阵乘法</h2>
+                <p style="text-indent: 2em;margin-bottom: 0;">虽然我们一级知道矩阵对向量的本质作用，但直接观察仍然很难得出拉伸的方向和大小，若能够知道矩阵具体的作用方式，那么就可以很大程度上简化计算，而这可以通过特征值和特征向量来实现。</p>
+                <p style="text-indent: 2em;margin-top: 0;">根据特征值与特征向量的定义可以得出，特征向量是对应矩阵作用下沿着自身方向“拉伸”λ倍的“特殊向量”。换言之，若α为A的特征向量，那么α'与α共线，且α'的模长为α的λ倍。因此，若能够求出矩阵的所有特征值与对应的特征向量，那么就可以知道矩阵对任意一个向量的变换，这便是特征值与特征向量所反映的矩阵的特征。读者可以利用下面的流程图及交互窗口加深理解。</p>
+                <img src="./picture/特征值与特征向量/特征值与特征向量表现矩阵变换示意图.png" style="width: calc(80%);">
+                <p class="formOrImgTitle">图1.通过特征值与特征向量实现矩阵变换示意图</p>
+
+                
+                <div class="interactiveBox">
+                    <canvas width="300rem" height="300rem"></canvas>
+                    <div class="controlWindow">
+                        <div class="marginFormular">
+                            <div style="max-width: 80rem;"></div>
+                            <div></div>
+                            <h3>=</h3>
+                            <div></div>
+                        </div>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>A</mi><mi>β</mi><mo>=</mo><msup><mi>β</mi><mo>′</mo></msup></math>
+
+                        <div class="marginFormular">
+                            <math style="font-size: 15rem;" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>α</mi><mrow><mn>1</mn></mrow></msub><mo>=</mo></math>
+                            <div></div>
+                            <math style="font-size: 15rem;margin-left: 15rem;" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>α</mi><mrow><mn>2</mn></mrow></msub><mo>=</mo></math>
+                            <div></div>
+                        </div>
+                        <div class="marginFormular" style="margin-top: -10rem;">
+                            <math style="font-size: 15rem;" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>λ</mi><mrow><mn>1</mn></mrow></msub><mo>=</mo></math>
+                            <h3></h3>
+                            <math style="font-size: 15rem;margin-left: 30rem;" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>λ</mi><mrow><mn>2</mn></mrow></msub><mo>=</mo></math>
+                            <h3></h3>
+                        </div>
+                        <h3 style="font-size: 10rem;margin: -8rem;">特征向量及特征值</h3>
+
+                        <div class="marginFormular">
+                            <div></div>
+                            <h3>=</h3>
+                            <h3></h3>
+                            <div></div>
+                            <h3>+</h3>
+                            <div></div>
+                        </div>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>β</mi><mo>=</mo><msub><mi>a</mi><mrow><mn>1</mn></mrow></msub><msub><mi>α</mi><mrow><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>a</mi><mrow><mn>2</mn></mrow></msub><msub><mi>α</mi><mrow><mn>2</mn></mrow></msub></math>
+
+                        <div style="display: flex;align-items: center;align-self: center;">
+                            <math style="font-size: 15rem;" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>β</mi></math>
+                            <div class="toolElements"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 style="margin-top: 8rem;">与线性变换的联系</h2>
+                <p style="text-indent: 2em;margin-bottom: 0;">以上分析是基于矩阵对与给定的目标向量的作用进行的，事实上，当我们回到线性变换时，会发现改变的其实并不是向量，而是向量的坐标，这意味着我们可以将矩阵理解为一种对向量的基的变换（事实上矩阵的乘法就是由此而来的）。在上述的分析中，我们采用的是坐标系的标准正交基来表示向量，但如果我们采用特征向量作为基底来表示向量，会发现矩阵的作用实际上就是将每个坐标乘上对应的特征值（根据示意图，β以特征向量为基向量的坐标是a1,a2,...,矩阵作用后的坐标是λ1a1,λ2a2,...），因此特征值与特征向量还给出了能够表示线性变换的简洁方法。</p>
+
+            </div>
+        </div>
+        
+        <div>
+            <h1>·性<div></div>质：</h1>
+            <div>
+                <h3>1.一个特征值可以对应多个特征向量，但一个特征向量只有一个特征值</h3>
+                <div class="proofBox">
+                    <h3>直观理解：</h3>
+                    <div>
+                        <p>特征值与特征向量反映了矩阵的作用特征，其中特征向量反应了“拉伸”的方向，λ反应了“拉伸程度”的大小，显然一个方向上的“拉伸程度”只能有一个，但同一个方向的特征向量可以有无穷多个，不同方向的特征向量也可以“拉伸”相同的“倍数”</p>
+                    </div>
+                </div>
+                <div class="proofBox">
+                    <h3>证明：</h3>
+                    <div>
+                        <div>
+                            <p>1.设</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>λ</mi><mrow><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>λ</mi><mrow><mn>2</mn></mrow></msub></math>
+                            <p>为矩阵A的一个特征向量α的的两个特征值，则有</p>
+                        </div>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>A</mi><mi>α</mi><mo>=</mo><msub><mi>λ</mi><mrow><mn>1</mn></mrow></msub></math>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>A</mi><mi>α</mi><mo>=</mo><msub><mi>λ</mi><mrow><mn>2</mn></mrow></msub></math>
+                        <div>
+                            <p>则</p>
+                            <math style="margin-top:3.5rem;" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msub><mi>λ</mi><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>λ</mi><mrow><mn>2</mn></mrow></msub><mo data-mjx-texclass="CLOSE">)</mo></mrow><mi>α</mi><mo>=</mo><msub><mi>λ</mi><mrow><mn>1</mn></mrow></msub><mi>α</mi><mo>−</mo><msub><mi>λ</mi><mrow><mn>2</mn></mrow></msub><mi>α</mi><mo>=</mo><mi>A</mi><mi>α</mi><mo>−</mo><mi>A</mi><mi>α</mi><mo>=</mo><mi>O</mi></math>
+                        </div>
+                        <div>
+                            <p>而</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>α</mi><mo>≠</mo><mn>0</mn></math>
+                            <p>,于是</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>λ</mi><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>λ</mi><mrow><mn>2</mn></mrow></msub></math>
+                            <p>。即一个特征向量只能对应一个特征值</p>
+                        </div>
+                        <p style="margin-top: 10rem;">2.设λ为矩阵A的一个特征值，对应的一个特征向量为α，则</p>    
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>A</mi><mi>α</mi><mo>=</mo><mi>λ</mi><mi>α</mi></math>
+                        <p>对于任意非零常数k，有</p>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>A</mi><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>k</mi><mi>α</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow><mo>=</mo><mi>k</mi><mi>A</mi><mi>α</mi><mo>=</mo><mi>k</mi><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>λ</mi><mi>α</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow><mo>=</mo><mi>λ</mi><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>k</mi><mi>α</mi><mo data-mjx-texclass="CLOSE">)</mo></mrow></math>
+                        <p>即α的任意非零常数倍仍为λ对应的特征向量</p>
+                    </div>
+                </div>
+
+                <h3>2.属于不同特征值的特征向量线性无关</h3>
+                <div class="proofBox">
+                    <h3>直观理解：</h3>
+                    <div>
+                        <p>若线性相关，那么存在一个特征向量可以由其他特征向量线性表出，这意味着在其他特征向量的方向上的“拉伸”将影响在该特征向量方向上的“拉伸”，那么拉伸倍数将不再是对应的特征值，换言之，该方向的“拉伸”已经被其他方向“拉伸”的确定了。因此各特征向量因保持线性无关</p>
+                    </div>
+                </div>
+
+                <div class="proofBox">
+                    <h3>证明：</h3>
+                    <div>
+                        <p>采用数学归纳法证明</p>
+                        <p>设矩阵A有n个不同的特征值，显然属于一个特征值的特征向量线性无关，设属于k个</p>
+                        <div>
+                            <p>不同特征值的特征向量线性无关（k&ltn），</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>α</mi><mrow><mi>i</mi></mrow></msub></math>
+                            <p>为属于第i个特征值</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>λ</mi><mrow><mi>i</mi></mrow></msub></math>              
+                            <p>的特征向量,</p>
+                        </div>
+                        <p>则等式</p>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>l</mi><mrow><mn>1</mn></mrow></msub><msub><mi>α</mi><mrow><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>l</mi><mrow><mn>2</mn></mrow></msub><msub><mi>α</mi><mrow><mn>2</mn></mrow></msub><mo>+</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>+</mo><msub><mi>l</mi><mrow><mi>k</mi></mrow></msub><msub><mi>α</mi><mrow><mi>k</mi></mrow></msub><mo>=</mo><mn>0</mn></math>
+                        <div>
+                            <p>成立当且仅当</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>l</mi><mrow><mi>i</mi></mrow></msub><mo>=</mo><mn>0</mn><mo>,</mo><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mi>k</mi></math>
+                        </div>
+                        <p>对于属于k+1个不同特征值的特征向量，考虑式</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>l</mi><mrow><mn>1</mn></mrow></msub><msub><mi>α</mi><mrow><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>l</mi><mrow><mn>2</mn></mrow></msub><msub><mi>α</mi><mrow><mn>2</mn></mrow></msub><mo>+</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>+</mo><msub><mi>l</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>α</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></math>
+                                </td>
+                                <td style="display: flex; align-items: center;">
+                                    <p style="margin: auto;">(1)</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <div>
+                            <p>该式等号两边同乘</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>λ</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub></math>
+                            <p>与A，得</p>
+                        </div>
+                        <math style="margin-top: 5rem;" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>l</mi><mrow><mn>1</mn></mrow></msub><msub><mi>λ</mi><mrow><mn>1</mn></mrow></msub><msub><mi>α</mi><mrow><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>l</mi><mrow><mn>2</mn></mrow></msub><msub><mi>λ</mi><mrow><mn>2</mn></mrow></msub><msub><mi>α</mi><mrow><mn>2</mn></mrow></msub><mo>+</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>+</mo><msub><mi>l</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>λ</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>α</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></math>
+                        <math style="margin-top: 10rem;" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>l</mi><mrow><mn>1</mn></mrow></msub><msub><mi>λ</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>α</mi><mrow><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>l</mi><mrow><mn>2</mn></mrow></msub><msub><mi>λ</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>α</mi><mrow><mn>2</mn></mrow></msub><mo>+</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>+</mo><msub><mi>l</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>λ</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>α</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></math>
+                        <p>两式相减得</p>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>l</mi><mrow><mn>1</mn></mrow></msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msub><mi>λ</mi><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>λ</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo data-mjx-texclass="CLOSE">)</mo></mrow><msub><mi>α</mi><mrow><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>l</mi><mrow><mn>2</mn></mrow></msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msub><mi>λ</mi><mrow><mn>2</mn></mrow></msub><mo>−</mo><msub><mi>λ</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo data-mjx-texclass="CLOSE">)</mo></mrow><msub><mi>α</mi><mrow><mn>2</mn></mrow></msub><mo>+</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>+</mo><msub><mi>l</mi><mrow><mi>k</mi></mrow></msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msub><mi>λ</mi><mrow><mi>k</mi></mrow></msub><mo>−</mo><msub><mi>λ</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo data-mjx-texclass="CLOSE">)</mo></mrow><msub><mi>α</mi><mrow><mi>k</mi></mrow></msub><mo>=</mo><mn>0</mn></math>
+                        <div>
+                            <p>由假设知该式成立当且仅当</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>l</mi><mrow><mi>i</mi></mrow></msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msub><mi>λ</mi><mrow><mi>i</mi></mrow></msub><mo>−</mo><msub><mi>λ</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo data-mjx-texclass="CLOSE">)</mo></mrow><mo>=</mo><mn>0</mn><mo>,</mo><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mi>k</mi></math>
+                        </div>
+                        <div>
+                            <p>又</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>λ</mi><mrow><mi>i</mi></mrow></msub><mo>−</mo><msub><mi>λ</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>≠</mo><mn>0</mn><mo>,</mo><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mi>k</mi></math>
+                            <p>,因此</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>l</mi><mrow><mi>i</mi></mrow></msub><mo>=</mo><mn>0</mn><mo>,</mo><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mi>k</mi></math>
+                        </div>
+                        <div>
+                            <p>此时（1）式成立当且仅当</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>l</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></math>
+                            <p>，从而属于不同特征值的特征向量线性无关</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="theoremBox">
+                    <h3>3.若矩阵A为方阵，λ为A的特征值，则</h3>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msup><mi>λ</mi><mrow><mi>n</mi></mrow></msup></math>
+                    <h3>为</h3>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msup><mi>A</mi><mrow><mi>n</mi></mrow></msup></math>
+                    <h3>的特征值</h3>
+                </div>
+                <div class="proofBox">
+                    <h3>直观理解：</h3>
+                    <div>
+                        <p>矩阵A的n次幂等同于矩阵A重复作用n次，即沿相同方向和大小“拉伸”同一个向量n次，因此矩阵A的n次幂每次“拉伸”的方向与A相同，“拉伸程度”为A的n次方，即特征值为A的n次幂</p>
+                    </div>
+                </div>
+                <div class="proofBox">
+                    <h3>证明：</h3>
+                    <div>
+                        <p>设λ为矩阵A的一个特征值，对应的一个特征向量为α，n为任意正整数，则</p>
+                        <img style="max-width: 230rem;" src="./picture/特征值与特征向量/证明n次幂.png">
+                        <div>
+                            <p>即</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msup><mi>λ</mi><mrow><mi>n</mi></mrow></msup></math>
+                            <p>为</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msup><mi>A</mi><mrow><mi>n</mi></mrow></msup></math>
+                            <p>的特征值</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="theoremBox">
+                    <h3>4.若矩阵A可逆，λ为A的非零特征值，则</h3>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msup><mi>λ</mi><mrow><mi>-1</mi></mrow></msup></math>  
+                    <h3>为</h3>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msup><mi>A</mi><mrow><mi>-1</mi></mrow></msup></math>
+                    <h3>的特征值</h3>
+                </div>
+                <div class="proofBox">
+                    <h3>直观理解：</h3>
+                    <div>
+                        <p>矩阵A的逆相当于将向量沿相同方向“缩小”相同倍数（向后对向量乘矩阵和矩阵的逆向量不变），因此特征值为原矩阵的倒数</p>
+                    </div>
+                </div>
+
+                
+                <div class="proofBox">
+                    <h3>证明：</h3>
+                    <div>
+                        <p>设λ为矩阵A的一个特征值，对应的一个特征向量为α，则</p>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>A</mi><mi>α</mi><mo>=</mo><mi>λ</mi><mi>α</mi></math>
+                        <p>等号两边同时左乘矩阵A的逆，得</p>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>α</mi><mo>=</mo><msup><mi>A</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>λ</mi><mi>α</mi><mo>=</mo><mi>λ</mi><msup><mi>A</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>α</mi></math>
+                        <div>
+                            <p>从而</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msup><mi>A</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>α</mi><mo>=</mo><msup><mi>λ</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>α</mi></math>
+                            <p>，即</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msup><mi>λ</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math>
+                            <p>为</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msup><mi>A</mi><mrow><mi>-1</mi></mrow></msup></math>
+                            <p>的特征值</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<script src="/JS/topBarDown.js"></script>
+<script src="/JS/topBarButton.js"></script>
+<!-- <script type="module" src="../JS/leftSideBar.js"></script> -->
+<!-- <script type="module" src="../JS/toolSideBar.js"></script> -->
+<script type="module" src="../JS/特征值与特征向量/interactiveWindow1/vector.js"></script>
+<script type="module" src="../JS/特征值与特征向量/interactiveWindow2/schematicAnimation.js"></script>
+<script type="module" src="../JS/特征值与特征向量/interactiveWindow1/Martix.js"></script>
+<script type="module" src="../JS/特征值与特征向量/interactiveWindow2/Matrix.js"></script>
+<script type="module" src="../JS/特征值与特征向量/interactiveWindow1/toolElements.js"></script>
+<script type="module" src="../JS/特征值与特征向量/interactiveWindow2/toolElements.js"></script>
+
+</html>
