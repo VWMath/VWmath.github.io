@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数学工具</title>
+    <link rel="shortcut icon" href="/picture/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/CSS/basic.css">
+    <link rel="stylesheet" href="/CSS/topBar.css">
+    <link rel="stylesheet" href="/CSS/background.css">
+
+</head>
+
+<script>
+    function resetHtmlFontSize(){
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/800 + 'px';
+    }
+    resetHtmlFontSize();
+    window.onresize = resetHtmlFontSize;
+</script>
+
+<style>
+    .toolBox{
+        display: flex;
+        width: 250rem;
+        height: 100rem;
+        border-radius: 30rem;
+        opacity: 0;
+        background-color: aliceblue;
+    }
+    
+    .toolBoxBackground{
+        border-radius: 30rem;
+        position: absolute;
+        align-self: center;
+        background-color: rgba(71, 33, 159, 0.648);
+        z-index: -1;
+    }
+
+    .toolBox img{
+        margin: 10rem;
+        width: 50rem;
+        height: 50rem;
+    }
+
+    .toolBox div{
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .toolBox div h1{
+        margin-left: 5rem;
+        margin-top: 8rem;
+    }
+
+    .toolBox div p{
+        text-align: start;
+        margin-top: -10rem;
+        margin-right: 20rem;
+    }
+
+    /* 动画 */
+    @keyframes enterButton {
+        0%{margin-left: 126rem;width: 0rem;height: 0rem;}
+        90%{margin-left: 0rem;width: 250rem;height: 100rem;}
+        100%{margin-left: 0rem;width: 250rem;height: 100rem;}
+    }
+
+    @keyframes toTransparent{
+        100%{background-color: transparent;}
+    }
+
+    @keyframes leaveButton {
+        0%{margin-left: 0rem;width: 250rem;height: 100rem;}
+        90%{margin-left: 0rem;width: 250rem;height: 100rem;}
+        100%{margin-left: 126rem;width: 0rem;height: 0rem;}
+    }
+
+    @keyframes toOpaque{
+        0%{background-color: transparent;}
+        100%{background-color: aliceblue;}
+    }
+
+</style>
+
+
+<body>
+    <!-- 背景 -->
+    <div class="backgroundBox">
+        <img id="backgroundImg" src="./picture/数学工具背景.jpeg">
+    </div>
+    <!-- 顶栏 -->
+    <div id="topBarBox">
+        <div id="topBar" style="background-color: rgba(255, 255, 255, 0.358);">
+            <div id="topBarButton">
+                <h1>首页</h1>
+                <h2>更新公告</h2>
+                <h2>关于</h2>
+                <h2>联系作者</h2>
+            </div>
+            
+            <div id="topSearchBar" >
+                <input type="text" id="topBarText" name="topBarTextInput" placeholder="搜索：" class="topSearchBarInput">
+            </div>
+        </div>
+    </div>
+
+    <h1 id="titleFont" style="opacity: 0; margin-top: 30rem; margin-bottom: 10rem; text-align: center; font-size: 30rem;color: aliceblue">数学工具</h1>
+    <div id="toolRectangle" style="width: 600rem; height: 300rem; display: flex; margin: auto;text-align: center;justify-content: space-around;flex-wrap: wrap;">
+        <div class="toolBox">
+            <img src="./picture/GeogebraLogo.png">
+            <div>
+                <h1>Geogebra</h1>
+                <p>GeoGebra 不仅是一套免费的数学工具, 而且是一个新型的数学学习平台, 可以让有着极大数学兴趣的老师和学生们以一种新的方式进行数学的探索和学习</p>
+            </div>
+            <div class="toolBoxBackground"></div>
+        </div>
+        
+        <div class="toolBox">
+            <img src="./picture/WolframeAlphaLogo.png">
+            <div>
+                <h1>WolframeAlpha</h1>
+                <p>由Wolfram Research公司推出的一款在线自动问答系统和计算知识引擎。采用WolframeAlpha算法、知识库和人工智能技术,得出高质量的数学问题答案</p>
+            </div>
+            <div class="toolBoxBackground"></div>
+        </div>
+
+        <div class="toolBox">
+            <img src="./picture/MatlabLogo.png">
+            <div>
+                <h1>Matlab</h1>
+                <p>MATLAB将适合迭代分析和设计过程的桌面环境与直接表达矩阵和数组运算的编程语言相结合，是数百万工程师和科学家都在使用的编程和数值计算平台，支持数据分析、算法开发和建模</p>
+            </div>
+            <div class="toolBoxBackground"></div>
+        </div>
+
+        <div class="toolBox">
+            <img src="./picture/LaTexLogo.png">
+            <div>
+                <h1>LaTex</h1>
+                <p>LaTeX是一种基于TeX的排版系统，它可以让作者使用预定义的专业格式以较高质量排版和印刷他们的作品。适合处理篇幅较长、结构严谨的文档，并且十分擅长处理公式表达</p>
+            </div>
+            <div class="toolBoxBackground"></div>
+        </div>
+    </div>
+
+</body>
+
+<script src="./JS/showPage.js"></script>
+<script src="./JS/button.js"></script>
+<script src="/JS/backgroundMove.js"></script>
+<script src="/JS/topBarDown.js"></script>
+<script src="/JS/topBarButton.js"></script>
+
+</html>
