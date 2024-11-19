@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识讲解</title>
+    <link rel="shortcut icon" href="/picture/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/CSS/basic.css">
+    <link rel="stylesheet" href="/CSS/topBar.css">
+    <link rel="stylesheet" href="./CSS/sideBar.css">
+
+</head>
+
+<script>
+    function resetHtmlFontSize(){
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/800 + 'px';
+    }
+    resetHtmlFontSize();
+    window.onresize = resetHtmlFontSize;
+</script>
+
+<style>
+    .sideBar{
+        margin-left: -105rem;
+        background-color: rgb(91, 91, 91);
+        border-top-right-radius: 10rem;
+        border-bottom-right-radius: 10rem;
+    }
+
+    #homepage{
+        display: flex;
+        flex-direction: column;
+        background-color: aliceblue;
+        width: 650rem;
+        align-self: center;
+        border-radius: 30rem;
+    }
+
+    #structureTreeBox{
+        width: 500rem;
+        height: 250rem;
+        margin: 10rem;
+        margin-top: -5rem;
+        border-radius: 20rem;
+        align-self: center;
+        background-color: rgba(201, 207, 215, 0.603);
+    }
+
+    :root{
+        --r: 20rem;
+        --color:rgb(147, 153, 160);
+    }
+
+    .circle, #structureTreeBox div {
+        width: var(--r);
+        height: var(--r);
+        background-color: var(--color);
+        border-radius: 50%;
+    }
+
+    .titleBox{
+        margin-left: 75rem;
+        display: flex;
+        justify-content: space-between;
+        width: 155rem;
+        height: 45rem;
+        margin-bottom: 12rem;        
+        border-bottom: 0.8rem solid;
+        border-image: linear-gradient(to right, aliceblue, rgb(147, 153, 160), rgb(162, 167, 172),rgb(223, 230, 237),aliceblue)1;
+    }
+    
+    .titleBox h1{
+        width: 110rem;
+    }
+
+    .titleBox p{
+        font-size: 6rem;
+        margin-top: 22rem;
+    }
+
+    #cardBox{
+        display: flex;
+        flex-wrap: wrap;
+        align-self: center;
+        align-items: start;
+        width: 510rem;
+        background-color: transparent;
+    }
+
+    #cardBox > div{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        width: 80rem;
+        height: 100rem;
+        border-radius: 5rem;
+        background-color: rgb(231, 237, 243);
+        margin: 2.4rem;
+        margin-bottom: 8rem;
+        transition: all 0.5s;
+    }
+
+    #cardBox > div > div{
+        display: flex;
+        align-items: center;
+        margin: auto;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+        height: calc(60%);
+        pointer-events: none;
+    }
+    
+    /* 动画 */
+    #cardBox :hover{
+        background-color: rgb(192, 207, 238);
+    }
+
+</style>
+
+<body>
+    <!-- 背景 -->
+    <div style="position: fixed; z-index: -1;">
+        <img style="margin: -5rem; width: 810rem;" src="./picture/知识讲解背景.jpg">
+    </div>
+
+    <!-- 顶栏 -->
+    <div id="topBarBox">
+        <div id="topBar" style="background-color: rgb(190, 196, 203);">
+            <div id="topBarButton">
+                <h1>首页</h1>
+                <h2>更新公告</h2>
+                <h2>关于</h2>
+                <h2>联系作者</h2>
+            </div>
+            
+            <div id="topSearchBar" >
+                <input type="text" id="topBarText" name="topBarTextInput" placeholder="搜索：" class="topSearchBarInput">
+            </div>
+        </div>
+    </div>
+
+    <!-- 侧边栏 -->
+    <div class="sideBar">
+        <img src="./picture/Logo.png" style="margin-top: 8rem; align-self: center; width: 80rem; border-bottom: 0.5rem solid beige;border-top: 0.5rem solid beige; border-radius: 8rem;">
+        <h1 style="margin: 8rem;border-top: 0.5rem solid; border-image: linear-gradient(to right, rgb(91, 91, 91), rgb(91, 91, 91),rgb(150, 150, 141), beige, rgb(150, 150, 141), rgb(91, 91, 91), rgb(91, 91, 91))1;"></h1>
+    </div>
+
+    <!-- 主页 -->
+    <div id="homepage">
+        <div class="titleBox">
+            <h1>结构树</h1>
+            <p>梳理知识结构，搭建知识框架，建立更加系统的知识体系</p>
+        </div>
+        <div id="structureTreeBox">
+            <div></div>
+        </div>
+
+        <div class="titleBox">
+            <h1>知识库</h1>
+            <p>丰富详细的知识点讲解，搭配可视化教学，轻松掌握知识</p>
+        </div>
+        <div id="cardBox"></div>
+
+    </div>
+</body>
+
+<script src="/JS/topBarDown.js"></script>
+<script src="/JS/topBarButton.js"></script>
+<script src="./JS/card.js"></script>
+<script type="module" src="./JS/leftSideBar.js"></script>
+
+</html>
